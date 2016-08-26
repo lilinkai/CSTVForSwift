@@ -12,9 +12,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var toolTabBarVC:ToolTabBarController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        toolTabBarVC = ToolTabBarController()
+        
+        window?.rootViewController = toolTabBarVC
+        
+        window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
     }

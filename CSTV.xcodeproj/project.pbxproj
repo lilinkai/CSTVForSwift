@@ -14,6 +14,17 @@
 		A6C8CD881D6FE24400E363EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C8CD861D6FE24400E363EF /* LaunchScreen.storyboard */; };
 		A6C8CD931D6FE24400E363EF /* CSTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD921D6FE24400E363EF /* CSTVTests.swift */; };
 		A6C8CD9E1D6FE24400E363EF /* CSTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD9D1D6FE24400E363EF /* CSTVUITests.swift */; };
+		A6C8CDB31D6FF1F800E363EF /* ToolNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CDB21D6FF1F800E363EF /* ToolNavigationController.swift */; };
+		A6F5354B1D7018C8003E54FB /* ToolTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5354A1D7018C8003E54FB /* ToolTabBarController.swift */; };
+		A6F5354E1D7019F7003E54FB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5354C1D7019F7003E54FB /* HomeVC.swift */; };
+		A6F5354F1D7019F7003E54FB /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F5354D1D7019F7003E54FB /* HomeVC.xib */; };
+		A6F535521D701A0C003E54FB /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F535501D701A0C003E54FB /* GameVC.swift */; };
+		A6F535531D701A0C003E54FB /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F535511D701A0C003E54FB /* GameVC.xib */; };
+		A6F535561D701A1A003E54FB /* FollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F535541D701A1A003E54FB /* FollowVC.swift */; };
+		A6F535571D701A1A003E54FB /* FollowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F535551D701A1A003E54FB /* FollowVC.xib */; };
+		A6F5355C1D701A37003E54FB /* MineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5355A1D701A37003E54FB /* MineVC.swift */; };
+		A6F5355D1D701A37003E54FB /* MineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F5355B1D701A37003E54FB /* MineVC.xib */; };
+		A6F5355F1D7027E0003E54FB /* ToolNavConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5355E1D7027E0003E54FB /* ToolNavConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +58,17 @@
 		A6C8CD991D6FE24400E363EF /* CSTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C8CD9D1D6FE24400E363EF /* CSTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTVUITests.swift; sourceTree = "<group>"; };
 		A6C8CD9F1D6FE24400E363EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6C8CDB21D6FF1F800E363EF /* ToolNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolNavigationController.swift; sourceTree = "<group>"; };
+		A6F5354A1D7018C8003E54FB /* ToolTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTabBarController.swift; sourceTree = "<group>"; };
+		A6F5354C1D7019F7003E54FB /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A6F5354D1D7019F7003E54FB /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		A6F535501D701A0C003E54FB /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		A6F535511D701A0C003E54FB /* GameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
+		A6F535541D701A1A003E54FB /* FollowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowVC.swift; sourceTree = "<group>"; };
+		A6F535551D701A1A003E54FB /* FollowVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowVC.xib; sourceTree = "<group>"; };
+		A6F5355A1D701A37003E54FB /* MineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineVC.swift; sourceTree = "<group>"; };
+		A6F5355B1D701A37003E54FB /* MineVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineVC.xib; sourceTree = "<group>"; };
+		A6F5355E1D7027E0003E54FB /* ToolNavConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolNavConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +119,11 @@
 		A6C8CD7C1D6FE24400E363EF /* CSTV */ = {
 			isa = PBXGroup;
 			children = (
+				A6C8CDB11D6FF1E500E363EF /* Tool */,
+				A6C8CDAB1D6FF14900E363EF /* Follow */,
+				A6C8CDAC1D6FF14900E363EF /* Game */,
+				A6C8CDAD1D6FF14900E363EF /* Home */,
+				A6C8CDAE1D6FF14900E363EF /* Mine */,
 				A6C8CD7D1D6FE24400E363EF /* AppDelegate.swift */,
 				A6C8CD7F1D6FE24400E363EF /* ViewController.swift */,
 				A6C8CD811D6FE24400E363EF /* Main.storyboard */,
@@ -123,6 +150,52 @@
 				A6C8CD9F1D6FE24400E363EF /* Info.plist */,
 			);
 			path = CSTVUITests;
+			sourceTree = "<group>";
+		};
+		A6C8CDAB1D6FF14900E363EF /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				A6F535541D701A1A003E54FB /* FollowVC.swift */,
+				A6F535551D701A1A003E54FB /* FollowVC.xib */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		A6C8CDAC1D6FF14900E363EF /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				A6F535501D701A0C003E54FB /* GameVC.swift */,
+				A6F535511D701A0C003E54FB /* GameVC.xib */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		A6C8CDAD1D6FF14900E363EF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A6F5354C1D7019F7003E54FB /* HomeVC.swift */,
+				A6F5354D1D7019F7003E54FB /* HomeVC.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A6C8CDAE1D6FF14900E363EF /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				A6F5355A1D701A37003E54FB /* MineVC.swift */,
+				A6F5355B1D701A37003E54FB /* MineVC.xib */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		A6C8CDB11D6FF1E500E363EF /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A6C8CDB21D6FF1F800E363EF /* ToolNavigationController.swift */,
+				A6F5354A1D7018C8003E54FB /* ToolTabBarController.swift */,
+				A6F5355E1D7027E0003E54FB /* ToolNavConfig.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6C8CD881D6FE24400E363EF /* LaunchScreen.storyboard in Resources */,
+				A6F535531D701A0C003E54FB /* GameVC.xib in Resources */,
+				A6F5354F1D7019F7003E54FB /* HomeVC.xib in Resources */,
+				A6F5355D1D701A37003E54FB /* MineVC.xib in Resources */,
 				A6C8CD851D6FE24400E363EF /* Assets.xcassets in Resources */,
 				A6C8CD831D6FE24400E363EF /* Main.storyboard in Resources */,
+				A6F535571D701A1A003E54FB /* FollowVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +333,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F5355F1D7027E0003E54FB /* ToolNavConfig.swift in Sources */,
 				A6C8CD801D6FE24400E363EF /* ViewController.swift in Sources */,
+				A6F5355C1D701A37003E54FB /* MineVC.swift in Sources */,
+				A6F5354E1D7019F7003E54FB /* HomeVC.swift in Sources */,
+				A6C8CDB31D6FF1F800E363EF /* ToolNavigationController.swift in Sources */,
 				A6C8CD7E1D6FE24400E363EF /* AppDelegate.swift in Sources */,
+				A6F535521D701A0C003E54FB /* GameVC.swift in Sources */,
+				A6F5354B1D7018C8003E54FB /* ToolTabBarController.swift in Sources */,
+				A6F535561D701A1A003E54FB /* FollowVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +566,7 @@
 				A6C8CDA41D6FE24400E363EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6C8CDA51D6FE24400E363EF /* Build configuration list for PBXNativeTarget "CSTVTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +575,7 @@
 				A6C8CDA71D6FE24400E363EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6C8CDA81D6FE24400E363EF /* Build configuration list for PBXNativeTarget "CSTVUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +584,7 @@
 				A6C8CDAA1D6FE24400E363EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
