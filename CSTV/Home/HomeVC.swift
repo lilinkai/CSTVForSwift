@@ -21,9 +21,14 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate,UINavigati
         
         automaticallyAdjustsScrollViewInsets = false
       
-        configNavStyle()
+        
         configContentCollectionView()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        configNavStyle()
     }
     
     override func didReceiveMemoryWarning() {

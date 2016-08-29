@@ -11,7 +11,7 @@ import UIKit
 class VCAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 1
+        return 0.5
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -29,12 +29,13 @@ class VCAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
         containView?.addSubview(toView)
         containView?.insertSubview(fromView, aboveSubview: toView)
         
-        let bgView = UIView(frame: UIScreen.mainScreen().bounds)
+        let bgView = UIView(frame: CGRect.init(x: 0, y: 64, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height))
         containView?.insertSubview(bgView, belowSubview: fromView)
         bgView.backgroundColor = UIColor.blackColor()
-        bgView.alpha = 0.3
+        bgView.alpha = 0.4
         
-        UIView.animateWithDuration(1, animations: { () -> Void in
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            bgView.alpha = 0
             toView.transform = CGAffineTransformMakeScale(1, 1)
             fromView.transform = CGAffineTransformMakeTranslation(0, UIScreen.mainScreen().bounds.height)
         }) { (finished) -> Void in
