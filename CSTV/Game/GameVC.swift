@@ -13,7 +13,7 @@ class GameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configNavStyle()
+//        configNavStyle()
         // Do any additional setup after loading the view.
     }
 

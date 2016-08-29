@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62C01821D741BFB00C6F2B6 /* VCAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C01811D741BFB00C6F2B6 /* VCAnimatedTransitioning.swift */; };
 		A6C8CD7E1D6FE24400E363EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD7D1D6FE24400E363EF /* AppDelegate.swift */; };
 		A6C8CD801D6FE24400E363EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD7F1D6FE24400E363EF /* ViewController.swift */; };
 		A6C8CD831D6FE24400E363EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C8CD811D6FE24400E363EF /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A62C01811D741BFB00C6F2B6 /* VCAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		A6C8CD7A1D6FE24400E363EF /* CSTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C8CD7D1D6FE24400E363EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C8CD7F1D6FE24400E363EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				A6C8CDB21D6FF1F800E363EF /* ToolNavigationController.swift */,
 				A6F5354A1D7018C8003E54FB /* ToolTabBarController.swift */,
 				A6F5355E1D7027E0003E54FB /* ToolNavConfig.swift */,
+				A62C01811D741BFB00C6F2B6 /* VCAnimatedTransitioning.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F5355F1D7027E0003E54FB /* ToolNavConfig.swift in Sources */,
+				A62C01821D741BFB00C6F2B6 /* VCAnimatedTransitioning.swift in Sources */,
 				A6C8CD801D6FE24400E363EF /* ViewController.swift in Sources */,
 				A6F5355C1D701A37003E54FB /* MineVC.swift in Sources */,
 				A6F5354E1D7019F7003E54FB /* HomeVC.swift in Sources */,

@@ -96,38 +96,4 @@ extension UIViewController{
         
         navigationItem.rightBarButtonItems = items
     }
-    
-    func configNavStyle() {
-        let leftItem1 = navBarItem(size: CGSize.init(width: 100, height: 50),
-                                   normalImage: "img_player_loadingbg",
-                                   highlightedImage: "img_player_loadingbg",
-                                   target: nil,
-                                   selector: nil)
-        
-        configLeftItems(leftItems: [leftItem1])
-        
-        
-        let rightItem1 = navBarItem(size: CGSize.init(width: 40, height: 40),
-                                    normalImage: "btn_top_search_n",
-                                    highlightedImage: "btn_top_search_p",
-                                    target: nil,
-                                    selector: nil)
-        let rightItem2 = navBarItem(size: CGSize.init(width: 40, height: 40),
-                                    normalImage: "btn_top_task_n",
-                                    highlightedImage: "btn_top_task_p",
-                                    target: nil,
-                                    selector: nil)
-        let rightItem3 = navBarItem(size: CGSize.init(width: 40, height: 40),
-                                    normalImage: "btn_top_bill_n",
-                                    highlightedImage: "btn_top_bill_p",
-                                    target: nil,
-                                    selector: nil)
-        let rightItem4 = navBarItem(size: CGSize.init(width: 40, height: 40),
-                                    normalImage: "btn_top_info_n",
-                                    highlightedImage: "btn_top_info_p",
-                                    target: nil,
-                                    selector: nil)
-        
-        configRightItems(rightItems: [rightItem1, rightItem2, rightItem3, rightItem4])
-    }
 }
