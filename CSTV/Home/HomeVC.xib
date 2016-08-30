@@ -32,6 +32,7 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="khZ-KI-jMA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LvG-Tu-Clk"/>
                 <constraint firstAttribute="trailing" secondItem="khZ-KI-jMA" secondAttribute="trailing" id="bgl-Ek-jcL"/>
@@ -39,7 +40,7 @@
                 <constraint firstAttribute="bottom" secondItem="khZ-KI-jMA" secondAttribute="bottom" id="xyg-RG-Sq8"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="351.5" y="144.5"/>
+            <point key="canvasLocation" x="404.5" y="155.5"/>
         </view>
     </objects>
 </document>
