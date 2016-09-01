@@ -142,7 +142,6 @@ extension HomeVC{
                     removeObserve()
                 
                     beginLocation = contentCollectionView.panGestureRecognizer.locationInView(view)
-                    print("开始滚动了")
                     
                     let bgButton = UIButton.init(type: .Custom)
                     bgButton.backgroundColor = UIColor.blackColor()
@@ -183,7 +182,6 @@ extension HomeVC{
                 let distance = view.frame.height - beginLocation.y
                 
                 let progressHeight = (location.y - beginLocation.y) / distance * view.frame.height
-                print("progressHeight ====== \(progressHeight/distance)")
                 
                 let bgButton = view.viewWithTag(2000)
                 bgButton?.alpha = 1 - progressHeight/distance
@@ -193,18 +191,18 @@ extension HomeVC{
                 
                 let snapView = view.viewWithTag(1000)
                 snapView?.transform = CGAffineTransformMakeTranslation(0, progressHeight)
-                
-              //  print("正在滑动 ==== \(location.y)")
-                
+           
             }
         case .Ended:
             if isPanAnimation {
-                print("结束滑动")
+                
                 isPanAnimation = false
-               // count -= 1
+                
                 let snapView = view.viewWithTag(1000)
                 snapView?.removeFromSuperview()
+                
                 contentCollectionView.transform = CGAffineTransformMakeScale(1, 1)
+                
                 let bgButton = view.viewWithTag(2000)
                 bgButton?.removeFromSuperview()
                 

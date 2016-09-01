@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A672AA991D76828E008A2EA9 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A672AA981D76828E008A2EA9 /* SnapKit.framework */; };
+		A6844E5F1D7800860050C060 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6844E5E1D7800860050C060 /* SnapKit.framework */; };
 		A6C8CD7E1D6FE24400E363EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD7D1D6FE24400E363EF /* AppDelegate.swift */; };
 		A6C8CD801D6FE24400E363EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD7F1D6FE24400E363EF /* ViewController.swift */; };
 		A6C8CD831D6FE24400E363EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C8CD811D6FE24400E363EF /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		A672AA981D76828E008A2EA9 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		A6844E5E1D7800860050C060 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		A6C8CD7A1D6FE24400E363EF /* CSTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C8CD7D1D6FE24400E363EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C8CD7F1D6FE24400E363EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A672AA991D76828E008A2EA9 /* SnapKit.framework in Frameworks */,
+				A6844E5F1D7800860050C060 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +105,7 @@
 		A6C8CD711D6FE24400E363EF = {
 			isa = PBXGroup;
 			children = (
+				A6844E5E1D7800860050C060 /* SnapKit.framework */,
 				A672AA981D76828E008A2EA9 /* SnapKit.framework */,
 				A6C8CD7C1D6FE24400E363EF /* CSTV */,
 				A6C8CD911D6FE24400E363EF /* CSTVTests */,
