@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import SnapKit
 
-class HomeVC: UIViewController, UIViewControllerTransitioningDelegate,UINavigationControllerDelegate {
-
+class HomeVC: UIViewController {
+ 
     @IBOutlet var contentCollectionView: UICollectionView!
     
-    let interactivePopTransition:UIPercentDrivenInteractiveTransition = UIPercentDrivenInteractiveTransition()
+    var isPanAnimation = false
     
-    var progress:CGFloat = 0.0
+    var beginLocation:CGPoint = CGPoint.zero    //记录起始点
     
-    var lastContentOffset:CGFloat = 0.0
-
-    let pushAnimator = VCAnimatedTransitioning()
-    
+    var count = 0
+    private var nextColor: UIColor {
+        return [
+            UIColor(red:0.83, green:0.88, blue:0.61, alpha:1.00),
+            UIColor(red:0.78, green:0.92, blue:0.94, alpha:1.00),
+            UIColor(red:0.30, green:0.46, blue:0.67, alpha:1.00)
+            ][max(count, 0) % 3]
+    }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +37,6 @@ class HomeVC: UIViewController, UIViewControllerTransitioningDelegate,UINavigati
     }
     
     override func viewWillLayoutSubviews() {
-        self.navigationController?.delegate = self
         super.viewWillLayoutSubviews()
         configNavStyle()
     }
@@ -87,64 +92,114 @@ extension HomeVC{
 }
 
 extension HomeVC{
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?{
-        return pushAnimator
-    }
-    
-    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return interactivePopTransition
-    }
-}
-
-extension HomeVC{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 20
+        return 50
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         let cell:UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("UICollectionViewCell", forIndexPath: indexPath)
-        cell.backgroundColor = UIColor.redColor()
+        cell.contentView.backgroundColor = nextColor
         return cell;
     }
     
     func configContentCollectionView() {
+        
         contentCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
         
+        contentCollectionView.panGestureRecognizer.addTarget(self, action: #selector(collectionViewPanGesTure(_:)))
         
-            
-        
-    }
- 
-    func scrollViewWillBeginDragging(scrollView: UIScrollView){
-        
-        lastContentOffset = scrollView.contentOffset.y
-        
-        if scrollView.contentOffset.y == 0 {
-            let homeVC = HomeVC()
-            self.navigationController?.pushViewController(homeVC, animated: true)
-            print("开始拖动")
-        }
+        addObserve()
+      
     }
 
-    func scrollViewDidScroll(scrollView: UIScrollView){
-        if (lastContentOffset < scrollView.contentOffset.y) {
-            print("向上滚动");
-        }else{
-            print("向下滚动");
-            if scrollView.contentOffset.y <= 0 {
-                progress = scrollView.contentOffset.y/contentCollectionView.frame.height
-                scrollView.setContentOffset(CGPointZero, animated: false)
-                interactivePopTransition.updateInteractiveTransition(-progress)
+}
+
+extension HomeVC{
+    
+    func addObserve() {
+        contentCollectionView.addObserver(self, forKeyPath: "contentOffset", options: .New, context: nil)
+    }
+    
+    func removeObserve() {
+        contentCollectionView.removeObserver(self, forKeyPath: "contentOffset")
+    }
+    
+}
+
+extension HomeVC{
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if keyPath == "contentOffset" {
+            
+            if let offSet = change![NSKeyValueChangeNewKey] {
+                let offset = (offSet as! NSValue).CGPointValue()
+                if offset.y < 0 && contentCollectionView.dragging && contentCollectionView.tracking{
+                    
+                    isPanAnimation = true
+                    removeObserve()
+                    
+                    count += 1
+                    contentCollectionView.reloadData()
+                    
+                    contentCollectionView.setContentOffset(CGPoint.zero, animated: false)
+                    
+                    beginLocation = contentCollectionView.panGestureRecognizer.locationInView(view)
+                    print("beginLocation ======\(beginLocation)")
+                    
+                    let snapshot = contentCollectionView.snapshotViewAfterScreenUpdates(false)
+                    snapshot.tag = 1000
+                    view.insertSubview(snapshot, aboveSubview: contentCollectionView)
+                    snapshot.frame.origin = CGPoint(x: 0, y: 64)
+                    
+                    
+                    
+                }
             }
         }
     }
     
-    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>){
-        interactivePopTransition.cancelInteractiveTransition()
+}
 
+extension HomeVC{
+    
+    func collectionViewPanGesTure(pan:UIPanGestureRecognizer) {
+        
+        switch pan.state {
+        case .Began:
+            ()
+        case .Changed:
+            if isPanAnimation {
+                
+                let location = pan.locationInView(view)
+                let distance = view.frame.height - beginLocation.y
+                
+                let progressHeight = (location.y - beginLocation.y) / distance * view.frame.height
+            
+                contentCollectionView.setContentOffset(CGPoint.zero, animated: false)
+                
+                let snapView = view.viewWithTag(1000)
+                
+                snapView?.transform = CGAffineTransformMakeTranslation(0, progressHeight)
+                
+              //  print("正在滑动 ==== \(location.y)")
+                
+            }
+        case .Ended:
+            if isPanAnimation {
+                print("结束滑动")
+                isPanAnimation = false
+               // count -= 1
+                let snapView = view.viewWithTag(1000)
+                snapView?.removeFromSuperview()
+                
+                addObserve()
+            }
+        default:
+            ()
+        }
+        
     }
-
 }
 
 

@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="CSTV" customModuleProvider="target">
             <connections>
-                <outlet property="contentCollectionView" destination="khZ-KI-jMA" id="Xro-fH-dJD"/>
+                <outlet property="contentCollectionView" destination="cip-fC-PSU" id="NUA-Ga-oUb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,28 +16,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="khZ-KI-jMA">
-                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cip-fC-PSU">
+                    <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0dU-yz-M6V">
-                        <size key="itemSize" width="150" height="300"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dbF-lX-CCP">
+                        <size key="itemSize" width="180" height="200"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="qRf-la-VKz"/>
-                        <outlet property="delegate" destination="-1" id="mfQ-ar-eJO"/>
+                        <outlet property="dataSource" destination="-1" id="B8R-yF-O2R"/>
+                        <outlet property="delegate" destination="-1" id="EUw-B5-gZU"/>
                     </connections>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="khZ-KI-jMA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LvG-Tu-Clk"/>
-                <constraint firstAttribute="trailing" secondItem="khZ-KI-jMA" secondAttribute="trailing" id="bgl-Ek-jcL"/>
-                <constraint firstItem="khZ-KI-jMA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="vCJ-6y-Lia"/>
-                <constraint firstAttribute="bottom" secondItem="khZ-KI-jMA" secondAttribute="bottom" id="xyg-RG-Sq8"/>
+                <constraint firstItem="cip-fC-PSU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2ip-o6-2Bq"/>
+                <constraint firstAttribute="bottom" secondItem="cip-fC-PSU" secondAttribute="bottom" constant="49" id="FWd-PZ-uX9"/>
+                <constraint firstItem="cip-fC-PSU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Fm2-2t-LTl"/>
+                <constraint firstAttribute="trailing" secondItem="cip-fC-PSU" secondAttribute="trailing" id="imb-Og-9cp"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="404.5" y="155.5"/>
