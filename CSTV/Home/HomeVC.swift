@@ -134,25 +134,33 @@ extension HomeVC{
             
             if let offSet = change![NSKeyValueChangeNewKey] {
                 let offset = (offSet as! NSValue).CGPointValue()
-                if offset.y < 0 && contentCollectionView.dragging && contentCollectionView.tracking{
-                    
-                    isPanAnimation = true
-                    removeObserve()
-                    
-                    count += 1
-                    contentCollectionView.reloadData()
+                if offset.y <= 0 && contentCollectionView.dragging && contentCollectionView.tracking{
                     
                     contentCollectionView.setContentOffset(CGPoint.zero, animated: false)
                     
+                    isPanAnimation = true
+                    removeObserve()
+                
                     beginLocation = contentCollectionView.panGestureRecognizer.locationInView(view)
-                    print("beginLocation ======\(beginLocation)")
+                    print("开始滚动了")
+                    
+                    let bgButton = UIButton.init(type: .Custom)
+                    bgButton.backgroundColor = UIColor.blackColor()
+                    bgButton.alpha = 0.7
+                    bgButton.tag = 2000
+                    view.insertSubview(bgButton, aboveSubview: contentCollectionView);
+                    bgButton.snp_makeConstraints(closure: { (make) in
+                        make.edges.equalTo(view).inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+                    })
+                    
                     
                     let snapshot = contentCollectionView.snapshotViewAfterScreenUpdates(false)
                     snapshot.tag = 1000
-                    view.insertSubview(snapshot, aboveSubview: contentCollectionView)
+                    view.insertSubview(snapshot, aboveSubview: bgButton)
                     snapshot.frame.origin = CGPoint(x: 0, y: 64)
-                    
-                    
+        
+                    count += 1
+                    contentCollectionView.reloadData()
                     
                 }
             }
@@ -175,11 +183,15 @@ extension HomeVC{
                 let distance = view.frame.height - beginLocation.y
                 
                 let progressHeight = (location.y - beginLocation.y) / distance * view.frame.height
-            
+                print("progressHeight ====== \(progressHeight/distance)")
+                
+                let bgButton = view.viewWithTag(2000)
+                bgButton?.alpha = 1 - progressHeight/distance
+                
                 contentCollectionView.setContentOffset(CGPoint.zero, animated: false)
+                contentCollectionView.transform = CGAffineTransformMakeScale(progressHeight/distance, progressHeight/distance)
                 
                 let snapView = view.viewWithTag(1000)
-                
                 snapView?.transform = CGAffineTransformMakeTranslation(0, progressHeight)
                 
               //  print("正在滑动 ==== \(location.y)")
@@ -192,6 +204,9 @@ extension HomeVC{
                // count -= 1
                 let snapView = view.viewWithTag(1000)
                 snapView?.removeFromSuperview()
+                contentCollectionView.transform = CGAffineTransformMakeScale(1, 1)
+                let bgButton = view.viewWithTag(2000)
+                bgButton?.removeFromSuperview()
                 
                 addObserve()
             }
