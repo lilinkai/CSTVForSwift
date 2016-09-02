@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController{
-    struct navBarItem {
+    struct customNavBarItem {
         let size:CGSize
         let normalImage:String
         let highlightedImage:String
@@ -55,19 +55,19 @@ extension UIViewController{
      */
     func configBackLeftItem(back_style back_style:backStyle) {
         
-        let navItem:navBarItem
+        let navItem:customNavBarItem
         
         switch back_style {
             
         case .dismissStyle:
-            navItem = navBarItem(size: CGSize.init(width: 50, height: 50), normalImage: "btn_back_normal", highlightedImage: "btn_back_press", target: self, selector: #selector(dismiss))
+            navItem = customNavBarItem(size: CGSize.init(width: 50, height: 50), normalImage: "btn_back_normal", highlightedImage: "btn_back_press", target: self, selector: #selector(dismiss))
         case .popStyle:
-            navItem = navBarItem(size: CGSize.init(width: 50, height: 50), normalImage: "btn_back_normal", highlightedImage: "btn_back_press", target: self, selector: #selector(pop))
+            navItem = customNavBarItem(size: CGSize.init(width: 50, height: 50), normalImage: "btn_back_normal", highlightedImage: "btn_back_press", target: self, selector: #selector(pop))
         }
         
         let backLeftItem = navItem.createBarButtonItem()
         
-        navigationItem.leftBarButtonItems = [navBarItem.createSpaceItem(), backLeftItem]
+        navigationItem.leftBarButtonItems = [customNavBarItem.createSpaceItem(), backLeftItem]
     }
     
     func dismiss() {
@@ -78,21 +78,21 @@ extension UIViewController{
         navigationController?.popViewControllerAnimated(true)
     }
     
-    func configLeftItems(leftItems leftItems:[navBarItem]) {
+    func configLeftItems(leftItems leftItems:[customNavBarItem]) {
         
         var items = leftItems.map{$0.createBarButtonItem()}
         
-        items.insert(navBarItem.createSpaceItem(), atIndex: 0)
+        items.insert(customNavBarItem.createSpaceItem(), atIndex: 0)
         
         navigationItem.leftBarButtonItems = items
     }
     
     
-    func configRightItems(rightItems rightItems:[navBarItem]) {
+    func configRightItems(rightItems rightItems:[customNavBarItem]) {
         
         var items = rightItems.map{$0.createBarButtonItem()}
         
-        items.insert(navBarItem.createSpaceItem(), atIndex: 0)
+        items.insert(customNavBarItem.createSpaceItem(), atIndex: 0)
         
         navigationItem.rightBarButtonItems = items
     }

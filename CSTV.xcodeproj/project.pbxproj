@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6844E6A1D780AE20050C060 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6844E681D780AE20050C060 /* HomeCell.swift */; };
+		A6844E6B1D780AE20050C060 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6844E691D780AE20050C060 /* HomeCell.xib */; };
+		A6844E6E1D781FDD0050C060 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6844E6C1D781FDD0050C060 /* HomeVC.swift */; };
+		A6844E6F1D781FDD0050C060 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6844E6D1D781FDD0050C060 /* HomeVC.xib */; };
+		A6844E711D782E500050C060 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6844E701D782E500050C060 /* Alamofire.framework */; };
 		A6C8CD7E1D6FE24400E363EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD7D1D6FE24400E363EF /* AppDelegate.swift */; };
 		A6C8CD801D6FE24400E363EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD7F1D6FE24400E363EF /* ViewController.swift */; };
 		A6C8CD831D6FE24400E363EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C8CD811D6FE24400E363EF /* Main.storyboard */; };
@@ -16,8 +21,6 @@
 		A6C8CD9E1D6FE24400E363EF /* CSTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CD9D1D6FE24400E363EF /* CSTVUITests.swift */; };
 		A6C8CDB31D6FF1F800E363EF /* ToolNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8CDB21D6FF1F800E363EF /* ToolNavigationController.swift */; };
 		A6F5354B1D7018C8003E54FB /* ToolTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5354A1D7018C8003E54FB /* ToolTabBarController.swift */; };
-		A6F5354E1D7019F7003E54FB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5354C1D7019F7003E54FB /* HomeVC.swift */; };
-		A6F5354F1D7019F7003E54FB /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F5354D1D7019F7003E54FB /* HomeVC.xib */; };
 		A6F535521D701A0C003E54FB /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F535501D701A0C003E54FB /* GameVC.swift */; };
 		A6F535531D701A0C003E54FB /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F535511D701A0C003E54FB /* GameVC.xib */; };
 		A6F535561D701A1A003E54FB /* FollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F535541D701A1A003E54FB /* FollowVC.swift */; };
@@ -46,6 +49,11 @@
 
 /* Begin PBXFileReference section */
 		A672AA981D76828E008A2EA9 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		A6844E681D780AE20050C060 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		A6844E691D780AE20050C060 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		A6844E6C1D781FDD0050C060 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A6844E6D1D781FDD0050C060 /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		A6844E701D782E500050C060 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		A6C8CD7A1D6FE24400E363EF /* CSTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C8CD7D1D6FE24400E363EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6C8CD7F1D6FE24400E363EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +69,6 @@
 		A6C8CD9F1D6FE24400E363EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6C8CDB21D6FF1F800E363EF /* ToolNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolNavigationController.swift; sourceTree = "<group>"; };
 		A6F5354A1D7018C8003E54FB /* ToolTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTabBarController.swift; sourceTree = "<group>"; };
-		A6F5354C1D7019F7003E54FB /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		A6F5354D1D7019F7003E54FB /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		A6F535501D701A0C003E54FB /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		A6F535511D701A0C003E54FB /* GameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
 		A6F535541D701A1A003E54FB /* FollowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowVC.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6844E711D782E500050C060 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +104,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6844E601D780AC20050C060 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				A6844E6C1D781FDD0050C060 /* HomeVC.swift */,
+				A6844E6D1D781FDD0050C060 /* HomeVC.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		A6844E631D780AC20050C060 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		A6844E641D780AC20050C060 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				A6844E681D780AE20050C060 /* HomeCell.swift */,
+				A6844E691D780AE20050C060 /* HomeCell.xib */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		A6844E651D780AC20050C060 /* VModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VModel;
+			sourceTree = "<group>";
+		};
 		A6C8CD711D6FE24400E363EF = {
 			isa = PBXGroup;
 			children = (
+				A6844E701D782E500050C060 /* Alamofire.framework */,
 				A672AA981D76828E008A2EA9 /* SnapKit.framework */,
 				A6C8CD7C1D6FE24400E363EF /* CSTV */,
 				A6C8CD911D6FE24400E363EF /* CSTVTests */,
@@ -175,8 +215,10 @@
 		A6C8CDAD1D6FF14900E363EF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A6F5354C1D7019F7003E54FB /* HomeVC.swift */,
-				A6F5354D1D7019F7003E54FB /* HomeVC.xib */,
+				A6844E601D780AC20050C060 /* C */,
+				A6844E631D780AC20050C060 /* M */,
+				A6844E641D780AC20050C060 /* V */,
+				A6844E651D780AC20050C060 /* VModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -210,7 +252,7 @@
 				A6C8CD761D6FE24400E363EF /* Sources */,
 				A6C8CD771D6FE24400E363EF /* Frameworks */,
 				A6C8CD781D6FE24400E363EF /* Resources */,
-				A672AA9A1D7683A6008A2EA9 /* ShellScript */,
+				A672AA9A1D7683A6008A2EA9 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -307,11 +349,12 @@
 			files = (
 				A6C8CD881D6FE24400E363EF /* LaunchScreen.storyboard in Resources */,
 				A6F535531D701A0C003E54FB /* GameVC.xib in Resources */,
-				A6F5354F1D7019F7003E54FB /* HomeVC.xib in Resources */,
 				A6F5355D1D701A37003E54FB /* MineVC.xib in Resources */,
 				A6C8CD851D6FE24400E363EF /* Assets.xcassets in Resources */,
 				A6C8CD831D6FE24400E363EF /* Main.storyboard in Resources */,
+				A6844E6F1D781FDD0050C060 /* HomeVC.xib in Resources */,
 				A6F535571D701A1A003E54FB /* FollowVC.xib in Resources */,
+				A6844E6B1D780AE20050C060 /* HomeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,14 +375,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A672AA9A1D7683A6008A2EA9 /* ShellScript */ = {
+		A672AA9A1D7683A6008A2EA9 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,9 +399,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F5355F1D7027E0003E54FB /* ToolNavConfig.swift in Sources */,
+				A6844E6E1D781FDD0050C060 /* HomeVC.swift in Sources */,
 				A6C8CD801D6FE24400E363EF /* ViewController.swift in Sources */,
 				A6F5355C1D701A37003E54FB /* MineVC.swift in Sources */,
-				A6F5354E1D7019F7003E54FB /* HomeVC.swift in Sources */,
+				A6844E6A1D780AE20050C060 /* HomeCell.swift in Sources */,
 				A6C8CDB31D6FF1F800E363EF /* ToolNavigationController.swift in Sources */,
 				A6C8CD7E1D6FE24400E363EF /* AppDelegate.swift in Sources */,
 				A6F535521D701A0C003E54FB /* GameVC.swift in Sources */,
@@ -508,7 +554,9 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CSTV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7k7k.CSTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -523,7 +571,9 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CSTV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7k7k.CSTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

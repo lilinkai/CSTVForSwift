@@ -40,7 +40,7 @@
                 <constraint firstAttribute="trailing" secondItem="cip-fC-PSU" secondAttribute="trailing" id="imb-Og-9cp"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="404.5" y="155.5"/>
+            <point key="canvasLocation" x="268.5" y="270.5"/>
         </view>
     </objects>
 </document>

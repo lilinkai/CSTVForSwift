@@ -56,7 +56,7 @@ extension HomeVC{
     }
     
     func configNavStyle() {
-        let leftItem1 = navBarItem(size: CGSize.init(width: 100, height: 50),
+        let leftItem1 = customNavBarItem(size: CGSize.init(width: 100, height: 50),
                                    normalImage: "img_player_loadingbg",
                                    highlightedImage: "img_player_loadingbg",
                                    target: self,
@@ -65,22 +65,22 @@ extension HomeVC{
         configLeftItems(leftItems: [leftItem1])
         
         
-        let rightItem1 = navBarItem(size: CGSize.init(width: 40, height: 40),
+        let rightItem1 = customNavBarItem(size: CGSize.init(width: 40, height: 40),
                                     normalImage: "btn_top_search_n",
                                     highlightedImage: "btn_top_search_p",
                                     target: nil,
                                     selector: nil)
-        let rightItem2 = navBarItem(size: CGSize.init(width: 40, height: 40),
+        let rightItem2 = customNavBarItem(size: CGSize.init(width: 40, height: 40),
                                     normalImage: "btn_top_task_n",
                                     highlightedImage: "btn_top_task_p",
                                     target: nil,
                                     selector: nil)
-        let rightItem3 = navBarItem(size: CGSize.init(width: 40, height: 40),
+        let rightItem3 = customNavBarItem(size: CGSize.init(width: 40, height: 40),
                                     normalImage: "btn_top_bill_n",
                                     highlightedImage: "btn_top_bill_p",
                                     target: nil,
                                     selector: nil)
-        let rightItem4 = navBarItem(size: CGSize.init(width: 40, height: 40),
+        let rightItem4 = customNavBarItem(size: CGSize.init(width: 40, height: 40),
                                     normalImage: "btn_top_info_n",
                                     highlightedImage: "btn_top_info_p",
                                     target: nil,
@@ -94,18 +94,25 @@ extension HomeVC{
 extension HomeVC{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 50
+        return 1000
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        let cell:UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("UICollectionViewCell", forIndexPath: indexPath)
+        let cell:HomeCell = collectionView.dequeueReusableCellWithReuseIdentifier("HomeCell", forIndexPath: indexPath) as! HomeCell
         cell.contentView.backgroundColor = nextColor
         return cell;
     }
     
     func configContentCollectionView() {
+    
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize.init(width: (UIScreen.mainScreen().bounds.width)/2-15, height: 140)
+    
+        flowLayout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
         
-        contentCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        contentCollectionView.collectionViewLayout = flowLayout
+        
+        contentCollectionView.registerNib(UINib.init(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
         
         contentCollectionView.panGestureRecognizer.addTarget(self, action: #selector(collectionViewPanGesTure(_:)))
         
@@ -140,6 +147,8 @@ extension HomeVC{
                     
                     isPanAnimation = true
                     removeObserve()
+                    
+                    contentCollectionView.transform = CGAffineTransformMakeScale(0.8, 0.8)
                 
                     beginLocation = contentCollectionView.panGestureRecognizer.locationInView(view)
                     
@@ -172,41 +181,75 @@ extension HomeVC{
     
     func collectionViewPanGesTure(pan:UIPanGestureRecognizer) {
         
+        let location = pan.locationInView(view)
+        let distance = view.frame.height - beginLocation.y
+        
+        let progress = (location.y - beginLocation.y) / distance  //0 - 1进度
+        
         switch pan.state {
         case .Began:
             ()
         case .Changed:
             if isPanAnimation {
+                let progressHeight = progress * view.frame.height  //截屏偏移量 progress * view.height
                 
-                let location = pan.locationInView(view)
-                let distance = view.frame.height - beginLocation.y
+                let progressAlpha = 1-(progress * 0.7 + 0.3) //0.6 - 1进度
                 
-                let progressHeight = (location.y - beginLocation.y) / distance * view.frame.height
-                
+                let progressScale =  progress * 0.2 + 0.8 //0.8 - 1进度
+               
+                //背景遮罩view alpha起始 0.6   结束  1
                 let bgButton = view.viewWithTag(2000)
-                bgButton?.alpha = 1 - progressHeight/distance
+                bgButton?.alpha = progressAlpha
+                print("progressAlpha ====== \(progressAlpha)")
                 
-                contentCollectionView.setContentOffset(CGPoint.zero, animated: false)
-                contentCollectionView.transform = CGAffineTransformMakeScale(progressHeight/distance, progressHeight/distance)
-                
+                //截屏view Translation起始 0  结束  1
                 let snapView = view.viewWithTag(1000)
                 snapView?.transform = CGAffineTransformMakeTranslation(0, progressHeight)
-           
+                
+                //内容view Scale起始0.8  结束  1
+                contentCollectionView.setContentOffset(CGPoint.zero, animated: false)
+                contentCollectionView.transform = CGAffineTransformMakeScale(progressScale, progressScale)
             }
         case .Ended:
+            
+            let canceled = progress <= 0.5
+            
             if isPanAnimation {
                 
                 isPanAnimation = false
                 
-                let snapView = view.viewWithTag(1000)
-                snapView?.removeFromSuperview()
-                
-                contentCollectionView.transform = CGAffineTransformMakeScale(1, 1)
-                
-                let bgButton = view.viewWithTag(2000)
-                bgButton?.removeFromSuperview()
-                
-                addObserve()
+                if canceled {
+                    
+                    count -= 1
+                    
+                    UIView.animateWithDuration(0.3, animations: { [weak self] in
+                        self!.view.viewWithTag(1000)!.transform = CGAffineTransformMakeTranslation(0, 0)
+                        
+                        self!.contentCollectionView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                        
+                        self!.view.viewWithTag(2000)!.alpha = 0
+                        
+                        }, completion: { [weak self] (finished) in
+                            self!.contentCollectionView.transform = CGAffineTransformMakeScale(1, 1)
+                            self!.contentCollectionView.reloadData()
+                            self!.addObserve()
+                            self!.view.viewWithTag(1000)!.removeFromSuperview()
+                            self!.view.viewWithTag(2000)!.removeFromSuperview()
+                    })
+                }else{
+                    UIView.animateWithDuration(0.3, animations: { [weak self] in
+                        self!.view.viewWithTag(1000)!.transform = CGAffineTransformMakeTranslation(0, 10000)
+                        
+                        self!.contentCollectionView.transform = CGAffineTransformMakeScale(1, 1)
+                        
+                        self!.view.viewWithTag(2000)!.alpha = 0
+                        
+                        }, completion: { [weak self] (finished) in
+                            self!.addObserve()
+                            self!.view.viewWithTag(1000)!.removeFromSuperview()
+                            self!.view.viewWithTag(2000)!.removeFromSuperview()
+                    })
+                }
             }
         default:
             ()
