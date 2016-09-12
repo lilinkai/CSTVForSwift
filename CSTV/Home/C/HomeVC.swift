@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SnapKit
+
 
 class HomeVC: UIViewController {
  
@@ -32,6 +32,8 @@ class HomeVC: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         configContentCollectionView()
+        
+        HomeRequest.getRequest()
         
         // Do any additional setup after loading the view.
     }
@@ -70,23 +72,8 @@ extension HomeVC{
                                     highlightedImage: "btn_top_search_p",
                                     target: nil,
                                     selector: nil)
-        let rightItem2 = customNavBarItem(size: CGSize.init(width: 40, height: 40),
-                                    normalImage: "btn_top_task_n",
-                                    highlightedImage: "btn_top_task_p",
-                                    target: nil,
-                                    selector: nil)
-        let rightItem3 = customNavBarItem(size: CGSize.init(width: 40, height: 40),
-                                    normalImage: "btn_top_bill_n",
-                                    highlightedImage: "btn_top_bill_p",
-                                    target: nil,
-                                    selector: nil)
-        let rightItem4 = customNavBarItem(size: CGSize.init(width: 40, height: 40),
-                                    normalImage: "btn_top_info_n",
-                                    highlightedImage: "btn_top_info_p",
-                                    target: nil,
-                                    selector: nil)
         
-        configRightItems(rightItems: [rightItem1, rightItem2, rightItem3, rightItem4])
+        configRightItems(rightItems: [rightItem1])
     }
     
 }
@@ -106,13 +93,13 @@ extension HomeVC{
     func configContentCollectionView() {
     
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize.init(width: (UIScreen.mainScreen().bounds.width)/2-15, height: 140)
+        flowLayout.itemSize = CGSize.init(width: (UIScreen.mainScreen.bounds.width)/2-15, height: 140)
     
         flowLayout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
         
         contentCollectionView.collectionViewLayout = flowLayout
         
-        contentCollectionView.registerNib(UINib.init(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
+        contentCollectionView.register(UINib.init(nibName: "HomeCell", bundle: nil), forCellWithReuseIdentifier: "HomeCell")
         
         contentCollectionView.panGestureRecognizer.addTarget(self, action: #selector(collectionViewPanGesTure(_:)))
         
@@ -125,7 +112,7 @@ extension HomeVC{
 extension HomeVC{
     
     func addObserve() {
-        contentCollectionView.addObserver(self, forKeyPath: "contentOffset", options: .New, context: nil)
+        contentCollectionView.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
     }
     
     func removeObserve() {
@@ -148,24 +135,24 @@ extension HomeVC{
                     isPanAnimation = true
                     removeObserve()
                     
-                    contentCollectionView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                    contentCollectionView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
                 
                     beginLocation = contentCollectionView.panGestureRecognizer.locationInView(view)
                     
                     let bgButton = UIButton.init(type: .Custom)
-                    bgButton.backgroundColor = UIColor.blackColor()
+                    bgButton.backgroundColor = UIColor.blackColor
                     bgButton.alpha = 0.7
                     bgButton.tag = 2000
                     view.insertSubview(bgButton, aboveSubview: contentCollectionView);
-                    bgButton.snp_makeConstraints(closure: { (make) in
+                    bgButton.updateConstraints(closure: { (make) in
                         make.edges.equalTo(view).inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
                     })
                     
                     
-                    let snapshot = contentCollectionView.snapshotViewAfterScreenUpdates(false)
-                    snapshot.tag = 1000
+                    let snapshot = contentCollectionView.snapshotView(afterScreenUpdates: false)
+                    snapshot?.tag = 1000
                     view.insertSubview(snapshot, aboveSubview: bgButton)
-                    snapshot.frame.origin = CGPoint(x: 0, y: 64)
+                    snapshot?.frame.origin = CGPoint(x: 0, y: 64)
         
                     count += 1
                     contentCollectionView.reloadData()
@@ -189,7 +176,7 @@ extension HomeVC{
         switch pan.state {
         case .Began:
             ()
-        case .Changed:
+        case .changed:
             if isPanAnimation {
                 let progressHeight = progress * view.frame.height  //截屏偏移量 progress * view.height
                 
@@ -200,8 +187,7 @@ extension HomeVC{
                 //背景遮罩view alpha起始 0.6   结束  1
                 let bgButton = view.viewWithTag(2000)
                 bgButton?.alpha = progressAlpha
-                print("progressAlpha ====== \(progressAlpha)")
-                
+             
                 //截屏view Translation起始 0  结束  1
                 let snapView = view.viewWithTag(1000)
                 snapView?.transform = CGAffineTransformMakeTranslation(0, progressHeight)

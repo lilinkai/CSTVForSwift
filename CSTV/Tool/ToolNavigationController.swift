@@ -13,7 +13,7 @@ class ToolNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationBar.barTintColor = UIColor.whiteColor()
+        navigationBar.barTintColor = UIColor.whiteColor
         // Do any additional setup after loading the view.
     }
 

@@ -18,19 +18,21 @@ extension UIViewController{
         let selector:Selector
         
         func createBarButtonItem() -> UIBarButtonItem{
-            let button = UIButton(type: .Custom)
+            let button = UIButton(type: .custom)
             button.frame = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
-            button.setImage(UIImage(named: normalImage), forState: .Normal)
-            button.setImage(UIImage(named: highlightedImage), forState: .Highlighted)
-            button.addTarget(target, action: selector, forControlEvents: .TouchUpInside)
+            button.setImage(#imageLiteral(resourceName: "btn_top_task_p"))
+            button.setImage(UIImage(named: normalImage), for: .normal)
+            button.setImage(UIImage(named: highlightedImage), for: .highlighted)
+            button.addTarget(target, action: selector, for: .touchUpInside)
             return UIBarButtonItem(customView: button)
         }
         
         /**
+         
          创建占位baritem
          */
         static func createSpaceItem() -> UIBarButtonItem {
-            let spaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
+            let spaceItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
             spaceItem.width = -15
             return spaceItem
         }
@@ -71,14 +73,14 @@ extension UIViewController{
     }
     
     func dismiss() {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func pop() {
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
     }
     
-    func configLeftItems(leftItems leftItems:[customNavBarItem]) {
+    func configLeftItems(leftItems:[customNavBarItem]) {
         
         var items = leftItems.map{$0.createBarButtonItem()}
         
@@ -88,11 +90,11 @@ extension UIViewController{
     }
     
     
-    func configRightItems(rightItems rightItems:[customNavBarItem]) {
+    func configRightItems(rightItems:[customNavBarItem]) {
         
         var items = rightItems.map{$0.createBarButtonItem()}
         
-        items.insert(customNavBarItem.createSpaceItem(), atIndex: 0)
+        items.insert(customNavBarItem.createSpaceItem(), at: 0)
         
         navigationItem.rightBarButtonItems = items
     }

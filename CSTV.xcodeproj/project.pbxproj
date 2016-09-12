@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61E96281D795055004F8EE2 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E96271D795055004F8EE2 /* HomeRequest.swift */; };
+		A61E962A1D795DFF004F8EE2 /* ToolRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E96291D795DFF004F8EE2 /* ToolRequest.swift */; };
 		A6844E6A1D780AE20050C060 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6844E681D780AE20050C060 /* HomeCell.swift */; };
 		A6844E6B1D780AE20050C060 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6844E691D780AE20050C060 /* HomeCell.xib */; };
 		A6844E6E1D781FDD0050C060 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6844E6C1D781FDD0050C060 /* HomeVC.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A61E96271D795055004F8EE2 /* HomeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
+		A61E96291D795DFF004F8EE2 /* ToolRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolRequest.swift; sourceTree = "<group>"; };
 		A672AA981D76828E008A2EA9 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		A6844E681D780AE20050C060 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		A6844E691D780AE20050C060 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 		A6844E651D780AC20050C060 /* VModel */ = {
 			isa = PBXGroup;
 			children = (
+				A61E96271D795055004F8EE2 /* HomeRequest.swift */,
 			);
 			path = VModel;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				A6C8CDB21D6FF1F800E363EF /* ToolNavigationController.swift */,
 				A6F5354A1D7018C8003E54FB /* ToolTabBarController.swift */,
 				A6F5355E1D7027E0003E54FB /* ToolNavConfig.swift */,
+				A61E96291D795DFF004F8EE2 /* ToolRequest.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -311,13 +317,17 @@
 				TargetAttributes = {
 					A6C8CD791D6FE24400E363EF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 44LG9YT6W7;
+						LastSwiftMigration = 0800;
 					};
 					A6C8CD8D1D6FE24400E363EF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = A6C8CD791D6FE24400E363EF;
 					};
 					A6C8CD981D6FE24400E363EF = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = A6C8CD791D6FE24400E363EF;
 					};
 				};
@@ -402,12 +412,14 @@
 				A6844E6E1D781FDD0050C060 /* HomeVC.swift in Sources */,
 				A6C8CD801D6FE24400E363EF /* ViewController.swift in Sources */,
 				A6F5355C1D701A37003E54FB /* MineVC.swift in Sources */,
+				A61E96281D795055004F8EE2 /* HomeRequest.swift in Sources */,
 				A6844E6A1D780AE20050C060 /* HomeCell.swift in Sources */,
 				A6C8CDB31D6FF1F800E363EF /* ToolNavigationController.swift in Sources */,
 				A6C8CD7E1D6FE24400E363EF /* AppDelegate.swift in Sources */,
 				A6F535521D701A0C003E54FB /* GameVC.swift in Sources */,
 				A6F5354B1D7018C8003E54FB /* ToolTabBarController.swift in Sources */,
 				A6F535561D701A1A003E54FB /* FollowVC.swift in Sources */,
+				A61E962A1D795DFF004F8EE2 /* ToolRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +561,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 44LG9YT6W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -559,6 +573,8 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7k7k.CSTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -566,6 +582,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 44LG9YT6W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -576,6 +594,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7k7k.CSTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -587,6 +606,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7k7k.CSTVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSTV.app/CSTV";
 			};
 			name = Debug;
@@ -599,6 +619,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7k7k.CSTVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSTV.app/CSTV";
 			};
 			name = Release;
@@ -610,6 +631,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7k7k.CSTVUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CSTV;
 			};
 			name = Debug;
@@ -621,6 +643,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.7k7k.CSTVUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CSTV;
 			};
 			name = Release;
